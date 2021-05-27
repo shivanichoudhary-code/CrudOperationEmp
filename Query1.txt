@@ -1,0 +1,36 @@
+use Test;
+
+create table Employee(
+id int Primary key identity,
+name varchar(20),
+email_id varchar(30),
+salary int,
+loc varchar(30)
+)
+
+insert into Employee(name,email_id,salary,loc) values('Abhishek','abhishek@gmail.com',29000,New Delhi);
+
+select * from Employee;
+
+update Employee set email_id='abhishek0123@gmail.com'
+where id=5;
+
+alter table Employee add Mobile_no int; 
+
+update Employee set salary=15000;
+
+select * from Employee
+where age between 23 and 30;
+
+update Employee set salary=25000
+where age between 23 and 30;
+
+
+sp_rename 'Employee.loc', 'Address';
+
+alter table Employee drop column Salary;
+
+insert into Employee(name,mobile_no,emailid,loc ) values('shivani',7124668814,'shivani@gmail.com','Noida');
+
+select * from Employee;
+
